@@ -1,0 +1,215 @@
+/* Color and font variables */
+:root {
+  --primary-color: #667eea; /* Main color */
+  --secondary-color: #764ba2; /* Secondary color */
+  --accent-color: #ff5722; /* Accent color */
+  --background-color: #f7f7f7; /* Background color */
+  --text-color: #333; /* Text color */
+  --header-gradient: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  ); /* Header gradient */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Header styling */
+header {
+  background: var(--header-gradient);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+header p {
+  font-size: 1.2rem;
+}
+
+/* Main container styling */
+main {
+  padding: 20px;
+}
+
+/* Game area (canvas) styling */
+#game-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+#mazeCanvas {
+  background-color: #fff;
+  border: none;
+  box-shadow: var(--shadow);
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  height: 400px;
+}
+
+/* Control buttons styling */
+#controls {
+  text-align: center;
+  margin: 20px 0;
+}
+#controls button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: var(--shadow);
+}
+#controls button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+/* Score board styling */
+#score-board {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.2rem;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+#score-board p {
+  margin: 5px 0;
+  color: var(--accent-color);
+}
+
+/* Status message styling */
+#status {
+  text-align: center;
+  margin: 20px 0;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+#status p {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+/* Virtual arrow buttons for mobile */
+#mobile-controls {
+  position: fixed; /* Fixed position on screen */
+  bottom: 20px; /* Distance from bottom */
+  left: 50%; /* Horizontal center */
+  transform: translateX(-50%); /* Shift left to truly center */
+  z-index: 1000; /* Ensure buttons are above other elements */
+  text-align: center;
+}
+
+.arrow-container {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 10px;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.arrow-btn {
+  background-color: #007bff; /* Modern blue color */
+  color: white;
+  border: none;
+  padding: 10px 15px; /* Smaller button size */
+  font-size: 1.2rem; /* Icon size */
+  cursor: pointer;
+  border-radius: 50%; /* Circular button */
+  margin: 5px; /* Spacing between buttons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth animation */
+}
+
+.arrow-btn:hover {
+  background-color: #0056b3; /* Darker color on hover */
+  transform: scale(1.1); /* Scale up effect */
+}
+
+.arrow-btn i {
+  font-size: 1.5rem; /* Arrow icon size */
+}
+
+.toggle-btn {
+  background-color: #dc3545; /* Red color for toggle button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #c82333; /* Darker color on hover */
+}
+
+.horizontal-arrows {
+  display: flex;
+  justify-content: center; /* Align left-right buttons */
+}
+
+/* Hide buttons on desktop */
+@media (min-width: 769px) {
+  #mobile-controls {
+    display: none !important;
+  }
+}
+
+/* Footer styling */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  #mazeCanvas {
+    height: 300px;
+  }
+  #score-board,
+  #status {
+    font-size: 1rem;
+  }
+}

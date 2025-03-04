@@ -15,3 +15,4 @@
 - Cari **titik keluar hijau** untuk menang.  
 - Timer mulai saat langkah pertama dan berhenti saat menang.  
 - Klik **"Restart Game"** untuk bermain ulang.
+---
